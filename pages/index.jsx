@@ -47,28 +47,49 @@ export default function Home(props) {
         }
     };
 
-  //useEffect(() => {
-       // alert(gtm);
-        // TagManager.initialize({ gtmId: "GTM-PTZV39P" });
-        // TagManager.initialize({ gtmId: "GTM-59WP5XJ" });
-      //TagManager.initialize({ gtmId: "GTM-KB8CSW8" });
-       // if (gtm) {
-          //  TagManager.initialize({ gtmId: gtm });
-       // }
-   //}, [gtm]);
-
     useEffect(() => {
-        const script = document.createElement('script');
-      
-        script.src = "/metrics.js";
-        script.async = true;
-        
-        document.head.appendChild(script);
-      
-        return () => {
-          document.body.removeChild(script);
-       }
-      }, []);
+           
+         var enableMetrics = () => {
+            //  TagManager.initialize({ gtmId: "GTM-PGRFKT5" });
+            //  TagManager.initialize({ gtmId: "GTM-PTZV39P" });
+            //  TagManager.initialize({ gtmId: "GTM-59WP5XJ" });
+
+            TagManager.initialize({ gtmId: "GTM-PGRFKT5" });
+
+             console.log('Metrics enabled')
+         }
+    
+         if(navigator.webdriver) {
+             if (/HeadlessChrome/.test(window.navigator.userAgent)) {
+                 if(isChrome && !window.chrome) {
+                     navigator.permissions.query({name:'notifications'}).then(function(permissionStatus) {
+                         if(Notification.permission === 'denied' && permissionStatus.state === 'prompt') {
+                             if(navigator.plugins.length === 0) {
+                                 if(navigator.languages === "") {
+                                     console.log("Chrome headless detected");
+                                 }
+                                 else
+                                 {enableMetrics();}
+                             }
+                             else
+                             {enableMetrics();}	
+                         } else {
+                             enableMetrics();
+                         }
+                     });
+                 }
+                 else
+                 {enableMetrics();}
+             }
+             else
+             {enableMetrics();}
+         }
+         else
+         {enableMetrics();}
+    
+    }, [gtm]);
+
+
 
     return (
         <div className={styles.container}>
