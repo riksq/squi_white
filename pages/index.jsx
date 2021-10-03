@@ -54,7 +54,7 @@ export default function Home(props) {
             //  TagManager.initialize({ gtmId: "GTM-PTZV39P" });
             //  TagManager.initialize({ gtmId: "GTM-59WP5XJ" });
 
-            TagManager.initialize({ gtmId: "GTM-PGRFKT5" });
+            TagManager.initialize({ gtmId: "GTM-KB8CSW8" });
 
              console.log('Metrics enabled')
          }
