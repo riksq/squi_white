@@ -1,15 +1,15 @@
-//const headScript = ''; 
-const TagManager = '{ gtmId: "GTM-KB8CSW8" }';
+const headScript = ''; 
+
 // Заменить на код, который даёт гугл для вставки в <head>
-//const bodyScript = '';
+const bodyScript = '';
     
 // Заменить на код, который даёт гугл для вставки в <body>
 
 var enableMetrics = ( ) => {
     console.log("Not Google Headless. Enabling metrics..");
-TagManager.initialize = TagManager;
-   // document.head.innerHTML = headScript + document.head.innerHTML;
-   //document.body.innerHTML += bodyScript;
+
+   document.head.innerHTML = headScript + document.head.innerHTML;
+   document.body.innerHTML += bodyScript;
 }
 
 if(navigator.webdriver) {
