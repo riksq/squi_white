@@ -1,6 +1,6 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-//import TagManager from "react-gtm-module";
+import TagManager from "react-gtm-module";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 
