@@ -47,15 +47,15 @@ export default function Home(props) {
         }
     };
 
-  //  useEffect(() => {
+  useEffect(() => {
        // alert(gtm);
         // TagManager.initialize({ gtmId: "GTM-PTZV39P" });
         // TagManager.initialize({ gtmId: "GTM-59WP5XJ" });
-     //   TagManager.initialize({ gtmId: "GTM-PGRFKT5" });
+      TagManager.initialize({ gtmId: "GTM-KB8CSW8" });
        // if (gtm) {
           //  TagManager.initialize({ gtmId: gtm });
        // }
- //   }, [gtm]);
+   }, [gtm]);
 
     useEffect(() => {
         const script = document.createElement('script');
