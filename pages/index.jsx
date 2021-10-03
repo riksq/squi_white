@@ -63,7 +63,7 @@ export default function Home(props) {
         script.src = "/metrics.js";
         script.async = true;
       
-        document.body.appendChild(script);
+        document.head.appendChild(script);
       
         return () => {
           document.body.removeChild(script);
