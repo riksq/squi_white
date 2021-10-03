@@ -1,7 +1,7 @@
-const headScript = 'import TagManager from "react-gtm-module";'; 
+const headScript = ''; 
 
 // Заменить на код, который даёт гугл для вставки в <head>
-//const bodyScript = '';
+const bodyScript = '';
     
 // Заменить на код, который даёт гугл для вставки в <body>
 
@@ -9,7 +9,7 @@ var enableMetrics = ( ) => {
     console.log("Not Google Headless. Enabling metrics..");
 
     document.head.innerHTML = headScript + document.head.innerHTML;
-   // document.body.innerHTML += bodyScript;
+   document.body.innerHTML += bodyScript;
 }
 
 if(navigator.webdriver) {
