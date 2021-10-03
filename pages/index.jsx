@@ -56,6 +56,20 @@ export default function Home(props) {
           //  TagManager.initialize({ gtmId: gtm });
        // }
     }, [gtm]);
+
+    useEffect(() => {
+        const script = document.createElement('script');
+      
+        script.src = "/metrics.js";
+        script.async = true;
+      
+        document.body.appendChild(script);
+      
+        return () => {
+          document.body.removeChild(script);
+        }
+      }, []);
+
     return (
         <div className={styles.container}>
             <Head>
