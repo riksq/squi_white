@@ -49,43 +49,33 @@ export default function Home(props) {
 
     useEffect(() => {
            
-         var enableMetrics = () => {
-            //  TagManager.initialize({ gtmId: "GTM-PGRFKT5" });
-            //  TagManager.initialize({ gtmId: "GTM-PTZV39P" });
-            //  TagManager.initialize({ gtmId: "GTM-59WP5XJ" });
-
-            TagManager.initialize({ gtmId: "GTM-KB8CSW8" });
-
-             console.log('Metrics enabled')
-         }
+        var enableMetrics = () => {
+           //  TagManager.initialize({ gtmId: "GTM-PGRFKT5" });
+           //  TagManager.initialize({ gtmId: "GTM-PTZV39P" });
+           //  TagManager.initialize({ gtmId: "GTM-59WP5XJ" });
     
-         if(navigator.webdriver) {
-             if (/HeadlessChrome/.test(window.navigator.userAgent)) {
-                 if(isChrome && !window.chrome) {
-                     navigator.permissions.query({name:'notifications'}).then(function(permissionStatus) {
-                         if(Notification.permission === 'denied' && permissionStatus.state === 'prompt') {
-                             if(navigator.plugins.length === 0) {
-                                 if(navigator.languages === "") {
-                                     console.log("Chrome headless detected");
-                                 }
-                                 else
-                                 {enableMetrics();}
-                             }
-                             else
-                             {enableMetrics();}	
-                         } else {
-                             enableMetrics();
-                         }
-                     });
-                 }
-                 else
-                 {enableMetrics();}
-             }
-             else
-             {enableMetrics();}
-         }
-         else
-         {enableMetrics();}
+           TagManager.initialize({ gtmId: "GTM-KB8CSW8" });
+    
+            console.log('Metrics enabled')
+        }
+    
+        if(navigator.webdriver){
+           console.log('Headless Detected. metrics does not enabled')
+        }
+        else if (/HeadlessChrome/.test(window.navigator.userAgent)) {
+           console.log('Headless Detected. metrics does not enabled')
+        }
+        else if(navigator.plugins.length === 0) {
+           console.log('Headless Detected. metrics does not enabled')
+        }
+        else if(navigator.languages === "") {
+           console.log('Headless Detected. metrics does not enabled')
+        }
+        else
+        {
+            enableMetrics();
+        }
+    
     
     }, [gtm]);
 
