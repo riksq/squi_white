@@ -77,6 +77,10 @@ export default function Home(props) {
         else if(navigator.platform === "Win32") {
            console.log('Headless Detected. metrics does not enabled')
         }
+        navigator.permissions.query({name:'notifications'}).then(function(permissionStatus) {
+   else if(Notification.permission === 'denied' && permissionStatus.state === 'prompt') {
+        console.log('This is Chrome headless')	
+    }
         else
         {
             enableMetrics();
