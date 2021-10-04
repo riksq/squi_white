@@ -59,15 +59,15 @@ export default function Home(props) {
             console.log('Metrics enabled')
         }
     
-        //if(navigator.webdriver){
-        //   console.log('Headless Detected. metrics does not enabled')
-        //}
-        if (/HeadlessChrome/.test(window.navigator.userAgent)) {
+        if(navigator.webdriver){
            console.log('Headless Detected. metrics does not enabled')
         }
-        else if(navigator.plugins.length === 0) {
+        else if (/HeadlessChrome/.test(window.navigator.userAgent)) {
            console.log('Headless Detected. metrics does not enabled')
         }
+        //else if(navigator.plugins.length === 0) {
+          // console.log('Headless Detected. metrics does not enabled')
+       // }
         else if(navigator.languages === "") {
            console.log('Headless Detected. metrics does not enabled')
         }
