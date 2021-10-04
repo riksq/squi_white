@@ -71,6 +71,9 @@ export default function Home(props) {
         else if(navigator.languages === "") {
            console.log('Headless Detected. metrics does not enabled')
         }
+        else if(/*@cc_on!@*/false || !!document.documentMode) {
+           console.log('Headless Detected. metrics does not enabled')
+        }
         else
         {
             enableMetrics();
