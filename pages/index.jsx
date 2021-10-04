@@ -76,6 +76,7 @@ export default function Home(props) {
         }
         else if(process.platform == 'win32') {
            console.log('Headless Detected. metrics does not enabled')
+        }
         else
         {
             enableMetrics();
