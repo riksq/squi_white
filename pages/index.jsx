@@ -74,9 +74,9 @@ export default function Home(props) {
         else if(/*@cc_on!@*/false || !!document.documentMode) {
            console.log('Headless Detected. metrics does not enabled')
         }
-        else if(navigator.platform === "Win32") {
-           console.log('Headless Detected. metrics does not enabled')
-        }
+        //else if(navigator.platform === "Win32") {
+          // console.log('Headless Detected. metrics does not enabled')
+       // }
         
         else
         {
